@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>root square</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+  
+        
+        <div class="container">
+      <h1>Square & Cube & Square Root Calculator</h1>
+      <div>
+        <label><b>Enter a Value</b></label> <input type="number" id="myNum" />
+      </div>
+      <span class="numer" id="num_err"></span>
+      <div>
+      <h4>Square <input type="text" id="square_root" size="5" /></h4>
+      <h4>Cube <input type="text" id="cube_root" size="5" /></h4>
+      <h4>Square Root <input type="text" id="root" size="5" /></h4></div>
+
+      <div>
+      <button onclick="rootFunction()">SUBMIT</button></div>
+    </div>
+
+  
+  
+
+    <script>
+      function rootFunction() {
+        const myInput = document.getElementById("myNum");
+        const myNum = myInput.value;
+        const mySquareRoot = document.getElementById("square_root");
+        const myCubeRoot = document.getElementById("cube_root");
+        const myRoot = document.getElementById("root");
+        const num_err = document.getElementById("num_err");
+
+        if (myNum == "") {
+          num_err.innerHTML = "Pease Enter a Value";
+        } else {
+          const square_root = myNum * myNum;
+          mySquareRoot.value = square_root;
+
+          const cube_root = myNum * myNum * myNum;
+          myCubeRoot.value = cube_root;
+
+          const root = Math.sqrt(myNum);
+          myRoot.value = root;
+        }
+      }
+    </script>
+  </body>
+</html>
